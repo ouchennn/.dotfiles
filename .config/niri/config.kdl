@@ -1,0 +1,42 @@
+include "keybinds.kdl"
+include "input.kdl"
+include "outputs.kdl"
+include "layout.kdl"
+include "windowsrule.kdl"
+include "animations.kdl"
+include "env.kdl"
+cursor {
+    xcursor-theme "Adwaita"
+    xcursor-size 24
+}
+
+prefer-no-csd
+
+xwayland-satellite {}
+
+spawn-at-startup "xwayland-satellite" "--" ":0"
+spawn-at-startup "wpaperd" "-d"
+spawn-at-startup "dunst"
+spawn-at-startup "waybar"
+spawn-at-startup "udiskie" "--no-tray" "--notify"
+
+// Redshift aletnernative; Casablanca coordinates
+spawn-at-startup "wlsunset" "-l" "33.5" "-L" "7.6" 
+
+spawn-at-startup "wl-paste" "--type" "text" "--watch" "cliphist" "store"
+spawn-at-startup "wl-paste" "--type" "image" "--watch" "cliphist" "store"
+
+hotkey-overlay {
+    // Show "Important Hotkeys" popup when niri starts
+    // Uncomment next line to disable this helpful reminder
+    // skip-at-startup
+    hide-not-bound
+}
+
+overview {
+  zoom 0.5
+}
+
+screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
+
+

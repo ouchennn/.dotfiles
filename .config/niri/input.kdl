@@ -1,0 +1,28 @@
+input {
+    keyboard {
+        repeat-delay 200
+        repeat-rate 35
+        
+        xkb {
+            layout "us"
+        }        
+    }
+    
+    touchpad {
+        tap
+        dwtp
+        natural-scroll
+    }
+    
+    mouse {
+        // External mouse configuration (currently using all defaults)
+    }
+    
+    trackpoint {
+        // ThinkPad trackpoint (red pointing stick) configuration
+        accel-speed 0.5
+        scroll-method "on-button-down"
+        scroll-button 273  // Button 273 is the middle mouse button
+    }
+    workspace-auto-back-and-forth
+}
