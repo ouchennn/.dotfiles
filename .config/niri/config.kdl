@@ -14,15 +14,16 @@ prefer-no-csd
 
 xwayland-satellite {}
 
-spawn-at-startup "xwayland-satellite" "--" ":0"
-spawn-at-startup "wpaperd" "-d"
-spawn-at-startup "dunst"
-spawn-at-startup "waybar"
-spawn-at-startup "udiskie" "--no-tray" "--notify"
+spawn-at-startup "xwayland-satellite" "--" ":0" // x11 compatibility
+spawn-at-startup "wpaperd" "-d" // wallpaper daemon
+spawn-at-startup "dunst" // notification daemon
+spawn-at-startup "waybar" // bar 
+spawn-at-startup "udiskie" "--no-tray" "--notify" // to mount disks at login
 
 // Redshift aletnernative; Casablanca coordinates
 spawn-at-startup "wlsunset" "-l" "33.5" "-L" "7.6" 
 
+// clipboard manager
 spawn-at-startup "wl-paste" "--type" "text" "--watch" "cliphist" "store"
 spawn-at-startup "wl-paste" "--type" "image" "--watch" "cliphist" "store"
 
